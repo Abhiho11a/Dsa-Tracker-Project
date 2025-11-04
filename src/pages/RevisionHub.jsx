@@ -82,7 +82,7 @@ const Revised = () => {
                         </h2>
 
                         {/* Date */}
-                        <p className="text-[13px] sm:text-sm text-gray-600 text-center -ml-[10px]">
+                        <p className="text-[13px] sm:text-sm text-gray-600 text-center -ml-2.5">
                           {it.date}
                         </p>
 
@@ -94,7 +94,7 @@ const Revised = () => {
                             rel="noreferrer"
                             className="flex items-center justify-center text-sm gap-1 px-3 py-1 rounded-md hover:bg-gray-100 text-blue-500 transition"
                             title="View Question">
-                              <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
+                              <Eye className="w-4 h-4 sm:w-5 sm:h-5"/>
                               <span className="hidden sm:inline">View</span>
                           </a>
                           <button
