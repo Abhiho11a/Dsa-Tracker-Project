@@ -51,7 +51,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="flex justify-between bg-gray-100 border-t mt-6 py-4 px-6 lg:px-10 gap-5 w-[100%] text-sm text-gray-700 fixed bottom-0">
+    <footer className="flex justify-between bg-gray-100 border-t mt-6 py-4 px-6 lg:px-10 gap-5 w-full text-sm text-gray-700 fixed bottom-0">
         <div className="font-bold text-md lg:text-xl">Total Questions:{stats.total}</div>
         <div className='flex font-semibold text-md lg:text-lg gap-1 justify-center'>
             <span className="text-green-600">Easy:{stats.easy}</span> {} &nbsp;|&nbsp;
