@@ -1,6 +1,6 @@
-import Home from "./pages/Home";
-import Questions from "./pages/Questions";
-import RevisionHub from "./pages/RevisionHub";
+import Home from "../pages/Home";
+import Questions from "../pages/Questions";
+import RevisionHub from "../pages/RevisionHub";
 
 export const routes = [
     { path:'/', element:Home},

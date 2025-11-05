@@ -28,7 +28,7 @@ const Progress = ({closeProgressChart}) => {
           </div> 
           {data.length === 0?<h2 className='mx-auto text-center'>Add Questions to view data.</h2>:
             <>
-              <div className='flex flex-col gap-3 overflow-y-scroll h-132 lg:h-114 scrollbar-hide'>
+              <div className='flex flex-col gap-3 overflow-y-scroll hide-scrollbar h-132 lg:h-114 scrollbar-hide'>
                 { uniqueTopic.map(it => {
                   const {count,perc,easy,medium,hard,revisedcount} = getPercentage(it)
                   return(

@@ -1,8 +1,9 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
-import { routes } from './routes.js'
-import Footer from './pages/Footer.jsx'
+import { routes } from './components/routes.js'
+import Footer from './components/Footer.jsx'
+
 const App = () => {
 
   return (

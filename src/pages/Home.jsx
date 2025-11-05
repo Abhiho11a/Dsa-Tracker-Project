@@ -3,7 +3,7 @@ import {v4 as uuidv4} from 'uuid'
 import Form from '../components/Form'
 import Notification from '../components/Notification'
 import '../App.css'
-import { Trash2Icon } from 'lucide-react'
+import { PlusIcon, Trash2Icon } from 'lucide-react'
 
 const Home = () => {
   const [data,setData] = useState(JSON.parse(localStorage.getItem("dataObj")) || [])
@@ -130,7 +130,7 @@ const Home = () => {
             <h1>No History Found....</h1>
             <p>Click the below <button className='bg-green-600 rounded-md px-1 py-1 font-semibold text-xs text-white'>Add Task</button> to Track Questions.
             </p></div>):
-            <div className='overflow-y-scroll scrollbar-hide flex flex-col gap-5 py-23 p-5 justify-self-center items-center'>
+            <div className='overflow-y-scroll hide-scrollbar flex flex-col gap-5 py-23 p-5 justify-self-center items-center'>
               <select onClick={(e) => sortByDate(e.target.value)} className='mr-80 md:mr-100 lg:mr-110 -mt-2.5 w-15 border-2 border-neutral-300 rounded-sm outline-none active:outline-2'>
                 <option value="" selected hidden className='text-xs hover:bg-gray-400'>Sort</option>
                 <option value="O-N" className='text-xs'>Oldest-Newest</option>
