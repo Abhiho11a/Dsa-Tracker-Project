@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import '../App.css'
 
 const Form = ({Que,setQue,Link,setLink,Topic,setTopic,Difficulty,setDifficulty,Note,setNote,hideForm,AddNewTask}) => {
-      const topics = ["Arrays", "Strings", "Linked List", "Stack", "Queue", "Recursion", "DP", "Graph", "Binary Tree", "BST"]
+      const topics = ["Arrays", "Strings", "Linked_List", "Stack", "Queue", "Recursion", "DP", "Graph", "Binary_Tree", "BST"]
 
-      let top = Topic;
   return (
     <div className='flex flex-col justify-items-center bg-gray-600 h-[92vh]  w-full z-1000'>
             <div className="flex flex-col gap-3  md:gap-5 justify-self-center bg-white  mx-auto mt-20 lg:mt-30 py-10 p-23 lg:p-10 rounded-md">

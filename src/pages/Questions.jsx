@@ -66,8 +66,8 @@ const Questions = () => {
 
   return (
     <div className='flex flex-col justify-self-center gap-5 py-23 mb-10'>
-      <div className="flex border-2 border-neutral-300 justify-between px-3 py-1 rounded-md items-center">
-        <input type="text" className='border-none outline-none w-full' value={searchval} onChange={(e) => handleFilters(e.target.value)} placeholder='Search question...'/>
+      <div className="flex border-2 border-neutral-300 justify-between px-3 py-1 rounded-md items-center md:w-140">
+        <input type="text" className='border-none outline-none' value={searchval} onChange={(e) => handleFilters(e.target.value)} placeholder='Search question...'/>
         <X size={20} className='cursor-pointer hover:bg-gray-300 rounded-sm' onClick={() => setSearchVal('')}/>
       </div>
 
@@ -106,8 +106,8 @@ const Questions = () => {
                 title="Delete Question"/>
             </div>
 
-            <h2 className="font-semibold text-lg mb-1 first-letter:capitalize wrap-break-words">
-              {idx + 1}.{queObj.que}
+            <h2 className="flex font-bold text-md mb-1 wrap-break-words max-w-60">
+              {idx + 1}.<p className='first-letter:capitalize font-medium'>{queObj.que}</p>
             </h2>
 
             {/* SOlved date + Platform */}
@@ -137,23 +137,25 @@ const Questions = () => {
 
             {/* Notes Section */}
             {showNote[1] === idx && (
-              <div className="mt-3 border-t border-gray-200 pt-2 text-sm wrap-break-words overflow-hidden">
-                <h3 className="font-semibold text-[#00A2FF] mb-1">Topics:</h3>
+              <div className=" mt-3 border-t border-gray-200 pt-2 text-sm wrap-break-words overflow-hidden">
 
                 {/* 🏷️ Topic tags */}
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {queObj.topic?.split(" ").filter(topic => topic.trim() !== "").map((topic, i) => (
-                    <span
-                      key={i}
-                      className={`px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium ${topic === " "?"hidden":""}`}
-                    >
-                      {topic}
-                    </span>
-                  ))}
+                <div className='flex gap-2'>
+                  <h3 className="font-semibold text-[#00A2FF] mb-1">Topics:</h3>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {queObj.topic?.split(" ").filter(topic => topic.trim() !== "").map((topic, i) => (
+                      <span
+                        key={i}
+                        className={`px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium ${topic === " "?"hidden":""}`}
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
+                
                 <p className="text-gray-600 leading-relaxed 
-                whitespace-pre-wrap wrap-break-words break-all overflow-hidden w-full max-w-full">
+                whitespace-pre-wrap wrap-break-words break-all overflow-hidden w-full max-w-65">
                   {queObj.note ? queObj.note : "Note Not Found."}</p>
 
               </div>)}

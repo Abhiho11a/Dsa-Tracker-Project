@@ -50,19 +50,21 @@ const Navbar = ({data,setData}) => {
             handleShowRandomque(false)
           }}/>:<MenuIcon size={30} className="cursor-pointer hover:scale-115 transition-all" 
           onClick={() => {
+            setShowProgress(false)
             handleOpenMenu(true)
             handleShowRandomque(false)
             }}/>}
 
           {openMenu && 
-          <div className='absolute top-15 left-0 w-full py-10 backdrop-blur-2xl text-lg shadow-md'>
+          <div className='absolute top-18 left-0 w-full py-10 backdrop-blur-2xl text-lg shadow-md'>
             <div onClick={() => handleOpenMenu(false)} className='flex flex-col items-center text-neutral-600 gap-5 transition-colors duration-500'>
               <Link to='/' className={`w-[80%] text-center p-2 border-neutral-300 border-2 ${activePage === "Home"?'bg-gray-300':''} hover:bg-gray-300`} onClick={() => (setActivePage("Home")) }>Home</Link>
               <Link to='/questions' className={`w-[80%] text-center p-2 border-neutral-300 border-2 ${activePage === "Questions"?'bg-gray-300':''} hover:bg-gray-300`}  onClick={() => setActivePage("Questions")} >Questions</Link>
               <Link to='/revision-hub' className={`w-[80%] text-center p-2 border-neutral-300 border-2 ${activePage === "Revised"?'bg-gray-300':''} hover:bg-gray-300`}  onClick={() => setActivePage("Revised")} >Revision Hub</Link>
               <button className="bg-green-500 hover:bg-green-600 px-3 py-1 rounded" 
                 onClick={() => {
-                handleShowRandomque(true)
+                handleShowRandomque(prev=>!prev)
+                setShowProgress(false)
                 handleOpenMenu(false)
                 }}>
                   Random Q

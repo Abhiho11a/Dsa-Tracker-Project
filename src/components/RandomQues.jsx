@@ -9,7 +9,7 @@ const GenRandomQue = ({closeRandomQue}) => {
     const [isQueGenerated,setIsQueGenerated] = useState(false)
     const [generatedQue,setGeneratedQue] = useState('')
 
-    const topics = ["arrays","strings","linked lists"]
+    const topics = ["Arrays", "Strings", "Linked_List", "Stack", "Queue", "Recursion", "DP", "Graph", "Binary_Tree", "BST"]
 
     function generateQuestion(){
         if(topic === "" || diffi === "")
@@ -17,7 +17,7 @@ const GenRandomQue = ({closeRandomQue}) => {
             alert(`Please select ${topic === ""?"topic":""} ${diffi === ""?"difficulty":''}`)
             return
         }
-        const filtered = data.filter(it => it.difficulty.toLowerCase() === diffi.toLowerCase() && it.topic.includes(topic.toLowerCase()) );
+        const filtered = data.filter(it => it.difficulty.toLowerCase() === diffi.toLowerCase() && it.topic.includes(topic) );
         if (filtered.length === 0) {
             alert("No question matches this filter!");
             return;
@@ -72,7 +72,7 @@ const GenRandomQue = ({closeRandomQue}) => {
             }
             <div className='flex justify-between w-full'>
                 <button className='bg-red-500 p-2 text-white rounded-md hover:bg-red-800 cursor-pointer' onClick={closeRandomQue}>Cancel</button>
-                <button  className={`bg-green-500 p-2 text-white rounded-md hover:bg-green-800 ${isQueGenerated?"cursor-no-drop":"cursor-pointer"} ${isQueGenerated?"bg-green-800":""}`} onClick={() => generateQuestion()}>Generate</button>
+                <button disabled={isQueGenerated} className={`bg-green-500 p-2 text-white rounded-md hover:bg-green-800 ${isQueGenerated?"cursor-no-drop":"cursor-pointer"} ${isQueGenerated?"bg-green-800":""}`} onClick={() => generateQuestion()}>Get Question</button>
             </div>
         </div>
     </section>

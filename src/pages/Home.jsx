@@ -31,8 +31,8 @@ const Home = () => {
       const difficulty = Difficulty
       const note = Note
       const currentDate = date?date:new Date().toLocaleDateString([],{day:'2-digit',month:'2-digit',year:"numeric"})
-      
-      if(ques && link && topic && difficulty)
+      console.log("dd",topic.trim().length,"dd")
+      if(ques && link && topic.trim().length !== 0 && difficulty)
       {
         date?setNotiMsg(`✅Question Added to Date ${date} Successfully`):setNotiMsg("✅Question Added Successfully")
         const newDataObj = {id:uuidv4(),que:ques,links:link,date:currentDate,topic:topic,difficulty:difficulty,note:note,revised:[0,new Date().toLocaleDateString([],{day:'2-digit',month:'2-digit',year:"numeric"})]}

@@ -10,7 +10,7 @@ const Revised = () => {
 
   const revisionPending = data.filter(obj => obj.revised[0] === 0)
   const revisionDone = data.filter(obj => obj.revised[0] !== 0)
-  console.log(revisionPending)
+  // console.log(revisionPending)
 
   const groupedByDifficulty = revisionPending.reduce((acc, item) => {
     const difficulty = item.difficulty.toLowerCase(); // normalize
@@ -55,7 +55,7 @@ const Revised = () => {
   return (
     <div className='flex flex-col justify-self-center mb-10 sm:mb-1 py-15 px-2'>
 
-      {data.length === 0?<h2 className='text-center'>Add Questions to view data.</h2>:
+      {data.length === 0?<h2 className='text-center mt-5'>Add Questions to view data.</h2>:
       <>
       {revisionPending.length !== 0 ? (
         <fieldset className="border border-gray-400 rounded-2xl shadow-sm p-4 sm:p-6 bg-white max-w-5xl mx-auto mt-10">
@@ -68,7 +68,7 @@ const Revised = () => {
               {Object.entries(groupedByDifficulty).map(([diff, diffData], diffIndex) => (
                 <div key={diff} className="mt-4">
                   {diffIndex !== 0 && <hr className="border-t-4 border-gray-300 my-3" />}
-                  <h3 className={`text-lg sm:text-base font-bold mb-3 text-left sm:px-4 
+                  <h3 className={`text-lg sm:text-base font-bold mb-3 text-left sm:px-4
                   ${ diff === "easy" ? "text-green-600" : diff === "medium" ? "text-yellow-600" : "text-red-600" }`}>
                     {diff === "easy" ? "🟢 Easy" : diff === "medium" ? "🟡 Medium" : "🔴 Hard"}
                   </h3>
@@ -77,8 +77,8 @@ const Revised = () => {
                     <div key={it.que} className="px-2 ">
                       <div className="grid grid-cols-3 items-center gap-3 sm:gap-6 py-3 px-2 hover:bg-gray-50 transition-all duration-200">
                         {/* Question Name */}
-                        <h2 className={`font-semibold text-md sm:text-sm md:text-base truncate text-left text-gray-800`}>
-                          {ind + 1}. {it.que}
+                        <h2 className={`flex font-semibold text-md sm:text-sm md:text-base text-left text-gray-800 max-w-60`}>
+                          {ind + 1}. <p className='first-letter:capitalize line-clamp-2'>{it.que}</p>
                         </h2>
 
                         {/* Date */}
@@ -143,10 +143,10 @@ const Revised = () => {
 
                   {/* Question Name */}
                   <h2
-                  className={`font-semibold text-sm sm:text-sm md:text-base truncate text-left
+                  className={`flex font-semibold text-sm sm:text-sm md:text-base text-left max-w-42 
                     ${ it.difficulty === "Easy" ? "text-green-600 md:text-gray-800" : 
                        it.difficulty === "Medium" ? "text-yellow-600 md:text-gray-800" : 
-                       "text-red-600 md:text-gray-800"}`}>{ind + 1}. {it.que} </h2>
+                       "text-red-600 md:text-gray-800"}`}>{ind + 1}. <p className='first-letter:capitalize line-clamp-2'>{it.que}</p></h2>
 
 
                   {/* Last Revised */}
