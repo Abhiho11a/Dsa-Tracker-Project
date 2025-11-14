@@ -21,7 +21,7 @@ const Progress = ({closeProgressChart}) => {
     
   return (
     <div className='absolute top-18 w-full left-0 backdrop-blur-xl z-1000'>
-        <div className="flex flex-col bg-gray-300 justify-self-center text-neutral-700 w-100 gap-5 px-10 py-5">
+        <div className="flex flex-col bg-gray-300 justify-self-center text-neutral-700 w-100 md:w-130 gap-5 px-10 py-5">
           <div className="flex justify-between items-center">
             <h2 className='mx-auto text-center text-3xl'>Progress</h2>
             <X className='hover:scale-115 cursor-pointer transition-all' onClick={() => closeProgressChart()}/>

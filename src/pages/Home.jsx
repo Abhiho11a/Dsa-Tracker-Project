@@ -147,7 +147,7 @@ const Home = () => {
 
                       {data.map((obj, idx) => (
                       <div key={idx} className='flex py-3 px-3 gap-5 lg:gap-20 md:gap-20 mt-2 items-center '>
-                          <span className='w-50 flex gap-1'>✅ {idx+1}. <h3 className='first-letter:capitalize'>{obj.que}</h3></span>
+                          <span className='w-50 flex gap-1'> {idx+1}. <h3 className='first-letter:capitalize'>{obj.que}</h3></span>
                           <a href={obj.links} target='blank' className='flex items-center gap-1 p-2 rounded hover:bg-gray-100 text-blue-500'>📖 View</a>
                           <button onClick={() => deleteQue(obj.id)} className='bg-red-600 hover:bg-red-500 cursor-pointer text-white rounded-md p-1'>
                           <Trash2Icon size={20}/>

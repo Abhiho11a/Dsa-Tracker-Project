@@ -22,17 +22,22 @@ const Navbar = ({data,setData}) => {
         <h1 className="font-bold text-2xl">DSA Tracker</h1>
       </div>
 
-      <div className="hidden md:flex lg:flex items-center gap-6 transition-all duration-700 text-gray-300">
-        <Link to='/' className={`${activePage === "Home"?'text-green-600 bg-gray-800':''} hover:text-green-600 px-4 py-1 rounded-xl`} onClick={() => setActivePage("Home")}>Home</Link>
-        <Link to='/questions' className={`${activePage === "Questions"?'text-green-600 bg-gray-800':''} hover:text-green-600 px-4 py-1 rounded-xl`}  onClick={() => setActivePage("Questions")} >Questions</Link>
-        <Link to='/revision-hub' className={`${activePage === "Revised"?'text-green-600 bg-gray-800':''} hover:text-green-600 px-4 py-1 rounded-xl`}  onClick={() => setActivePage("Revised")} >Revision Hub</Link>
+      <div className="hidden md:flex lg:flex items-center gap-6 transition-all duration-700 text-gray-300" 
+      onClick={() => {
+        handleShowRandomque(false)
+        setShowProgress(false)
+      }}>
+        <Link to='/' className={`transition-transform duration-500 ${activePage === "Home"?'text-green-600 bg-gray-700 -translate-y-1':'translate-y-0'} hover:text-green-600 px-4 py-1 rounded-xl`} onClick={() => setActivePage("Home")}>Home</Link>
+        <Link to='/questions' className={`transition-transform duration-500  ${activePage === "Questions"?'text-green-600 bg-gray-700 -translate-y-1':'translate-y-0'} hover:text-green-600 px-4 py-1 rounded-xl`}  onClick={() => setActivePage("Questions")} >Questions</Link>
+        <Link to='/revision-hub' className={`transition-transform duration-500  ${activePage === "Revised"?'text-green-600 bg-gray-700 -translate-y-1':'translate-y-0'} hover:text-green-600 px-4 py-1 rounded-xl`}  onClick={() => setActivePage("Revised")} >Revision Hub</Link>
       </div>
 
       <div className="flex items-center gap-4">
         <BarChart3 onClick={() => setShowProgress(prev => !prev)}  className='lg:block hover:scale-115 md:block cursor-pointer'/>
         <button className="bg-green-500 hover:bg-green-600 px-3 py-1 rounded hidden lg:block md:block" 
         onClick={() => {
-        handleShowRandomque(true)
+        handleShowRandomque(prev=>!prev)
+        setShowProgress(false)
         handleOpenMenu(false)
         }}>
           Random Q

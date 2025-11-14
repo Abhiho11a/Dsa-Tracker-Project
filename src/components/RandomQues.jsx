@@ -41,7 +41,7 @@ const GenRandomQue = ({closeRandomQue}) => {
     }
 
   return (
-    <section className='absolute top-18 left-0 backdrop-blur-xl bg-gray-600 w-full h-[79vh]'>
+    <section className='absolute top-18 left-0 backdrop-blur-md bg-black/40 w-full h-[82vh]'>
         <div className="flex flex-col gap-5 justify-self-center items-center-safe bg-gray-200 mt-25 w-80 lg:w-100 rounded-md text-black p-10">
             <div className="flex justify-between items-center w-full">
                 <h2 className='w-full text-center text-2xl  lg:text-3xl md:text-2xl'>Random Question</h2>
@@ -65,8 +65,8 @@ const GenRandomQue = ({closeRandomQue}) => {
             <div className='flex flex-col items-center'>
                 <h2>{generatedQue.que}</h2>
                 <div className="flex gap-5">
-                    <button className='rounded-md bg-red-400 text-white cursor-pointer px-2 py-1 text-sm'>UnSolved</button>
-                    <button onClick={() => updateRevisedate(generatedQue)} className='rounded-md bg-green-400 text-white cursor-pointer px-2 py-1 text-sm' title='Clicking this will updated last revised date to Today!'>Solved</button>
+                    <button className='rounded-md bg-red-600 text-white cursor-pointer px-2 py-1 text-sm' onClick={closeRandomQue}>Not Done</button>
+                    <button onClick={() => updateRevisedate(generatedQue)} className='rounded-md bg-green-600 text-white cursor-pointer px-2 py-1 text-sm' title='Clicking this will updated last revised date to Today!'>Done</button>
                 </div>
             </div>
             }
