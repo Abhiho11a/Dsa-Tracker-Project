@@ -139,7 +139,7 @@ const Revised = () => {
             {revisionDone.map((it, ind) => (
               <div
                 key={it.que}
-                className="grid grid-cols-3 md:grid-cols-4 items-center gap-5 sm:gap-9 px-2 sm:px-4 py-3 hover:bg-gray-50 transition-all duration-200 ">
+                className="grid grid-cols-3 md:grid-cols-4 items-center  sm:gap-9 px-2 sm:px-4 py-3 hover:bg-gray-50 transition-all duration-200 ">
 
                   {/* Question Name */}
                   <h2

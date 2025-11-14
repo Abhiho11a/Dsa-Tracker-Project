@@ -158,7 +158,7 @@ const Home = () => {
               ))}
           </div>
     )}
-    <button onClick={() => setShowForm(true)} className='bg-green-600 mt-5 rounded-md px-2 py-1 font-semibold text-white cursor-pointer hover:bg-green-700 right-5 bottom-18 z-100 fixed'>Add Task</button>
+    <button onClick={() => setShowForm(true)} className='bg-green-600 mt-5 rounded-md px-2 py-1 font-semibold text-white cursor-pointer hover:bg-green-700 right-5 bottom-18 fixed'>Add Task</button>
     {notiMsg && <Notification msg={notiMsg}/>}
     </div>
   )
