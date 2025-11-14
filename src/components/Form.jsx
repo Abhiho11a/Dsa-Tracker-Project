@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 
 const Form = ({Que,setQue,Link,setLink,Topic,setTopic,Difficulty,setDifficulty,Note,setNote,hideForm,AddNewTask}) => {
       const topics = ["Arrays", "Strings", "Linked List", "Stack", "Queue", "Recursion", "DP", "Graph", "Binary Tree", "BST"]
 
+      let top = Topic;
   return (
     <div className='flex flex-col justify-items-center bg-gray-600 h-[92vh]  w-full z-1000'>
             <div className="flex flex-col gap-3  md:gap-5 justify-self-center bg-white  mx-auto mt-20 lg:mt-30 py-10 p-23 lg:p-10 rounded-md">
@@ -30,9 +31,17 @@ const Form = ({Que,setQue,Link,setLink,Topic,setTopic,Difficulty,setDifficulty,N
                             <button
                                 key={topic}
                                 type="button"
-                                onClick={() => setTopic(topic)}
+                                onClick={() => {
+                                    if(!Topic.includes(topic))
+                                        setTopic(prev => prev+" "+topic)
+                                    else
+                                    {
+                                        const updatedTopic = Topic.replace(topic,'');
+                                        setTopic(updatedTopic);
+                                    }
+                                }}
                                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 shadow-sm ${
-                                    Topic === topic 
+                                    Topic.includes(topic) 
                                     ? "bg-blue-600 text-white shadow-md scale-105" 
                                     : "bg-white text-gray-700 border border-gray-300 hover:bg-blue-50 hover:border-blue-400"}`} 
                             >{topic}</button>

@@ -142,12 +142,12 @@ const Questions = () => {
 
                 {/* 🏷️ Topic tags */}
                 <div className="flex flex-wrap gap-2 mb-2">
-                  {queObj.topic?.split(",").map((topic, i) => (
+                  {queObj.topic?.split(" ").filter(topic => topic.trim() !== "").map((topic, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium"
+                      className={`px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium ${topic === " "?"hidden":""}`}
                     >
-                      {topic.trim()}
+                      {topic}
                     </span>
                   ))}
                 </div>
