@@ -16,7 +16,7 @@ const Progress = ({closeProgressChart}) => {
       const easy = ((data.filter( it => ((it.topic.includes(topic) && it.difficulty.toLowerCase() ==="easy"))).length))
       const medium = ((data.filter( it => ((it.topic.includes(topic) && it.difficulty.toLowerCase() ==="medium"))).length))
       const hard = ((data.filter( it => ((it.topic.includes(topic) && it.difficulty.toLowerCase() ==="hard"))).length))
-      const revisedcount = ((data.filter( it => ((it.topic.toLowerCase() === topic.toLowerCase() && it.revised[0] !== 0))).length))
+      const revisedcount = ((data.filter( it => ((it.topic.includes(topic) && it.revised[0] !== 0))).length))
       
       const perc = ((count/data.length)*100).toFixed(1)
       // console.log(count,perc,"e",easy,"m",medium,"h",hard)
